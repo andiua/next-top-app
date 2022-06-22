@@ -1,0 +1,29 @@
+@import '../../styles/variable'; 
+.button {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 10px;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 5px;
+	border: none;
+	font-size: 14px;
+	transition: all .5s;
+}
+
+.primary{
+	color: $white;
+	background-color: $primary;
+	&:hover{
+		background-color: $primary-hover
+	}
+}
+.ghost{
+	color: $black;
+	background-color: transparent;
+	border: 1px solid $grey-light;
+		&:hover{
+		background-color: $primary;
+		color: $white;
+	}
+}
