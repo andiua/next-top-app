@@ -8,14 +8,19 @@
 	border-radius: 5px;
 	border: none;
 	font-size: 14px;
-	transition: all .5s;
+	transition: $transition;
+	svg {
+		transition: $transition;
+	}
 }
-
 .primary{
 	color: $white;
 	background-color: $primary;
 	&:hover{
 		background-color: $primary-hover
+	}
+	svg {
+		fill: $white;
 	}
 }
 .ghost{
@@ -25,5 +30,16 @@
 		&:hover{
 		background-color: $primary;
 		color: $white;
+		svg {
+			fill: $white;
+		}
 	}
+}
+.arrow {
+	display: inline-block;
+	margin-left: 10px;
+}
+.down {
+	transform: rotate(90deg);
+	transition: $transition;
 }
