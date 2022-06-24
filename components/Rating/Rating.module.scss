@@ -1,0 +1,13 @@
+@import '../../styles/variable'; 
+
+.star{
+	transition: $transition;
+	margin-right: 5px;
+}
+.fill{
+	fill: $primary;
+}
+
+.editable{
+	cursor: pointer;
+}

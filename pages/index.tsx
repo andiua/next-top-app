@@ -1,18 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from '../components/Button/Button';
 import Htag from '../components/Htag/Htag';
 import Paragraph from '../components/Paragraph/Paragraph';
+import Rating from '../components/Rating/Rating';
 import Tag from '../components/Tag/Tag';
 
-const Home = () => {
+const Home = (): JSX.Element => {
 	const [counter, setCounter] = useState<number>(0);
-	useEffect(() => {
-		console.log('Counter ' + counter);
-
-		return () => {
-			console.log('Unmount ' + counter);
-		};
-	});
+	const [rating, setRating] = useState<number>(2);
 
 	return (
 		<>
@@ -40,6 +35,11 @@ const Home = () => {
 				size="s">
 				This is div primary
 			</Tag>
+			<Rating
+				rating={rating}
+				isEditable
+				setRating={setRating}
+			/>
 		</>
 	);
 };
