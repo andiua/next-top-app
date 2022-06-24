@@ -4,8 +4,9 @@ import Htag from '../components/Htag/Htag';
 import Paragraph from '../components/Paragraph/Paragraph';
 import Rating from '../components/Rating/Rating';
 import Tag from '../components/Tag/Tag';
+import { withLayout } from '../layout/Layout';
 
-const Home = (): JSX.Element => {
+const Homesss = (): JSX.Element => {
 	const [counter, setCounter] = useState<number>(0);
 	const [rating, setRating] = useState<number>(2);
 
@@ -44,4 +45,4 @@ const Home = (): JSX.Element => {
 	);
 };
 
-export default Home;
+export default withLayout(Homesss);
