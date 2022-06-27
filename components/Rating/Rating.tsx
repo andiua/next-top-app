@@ -13,7 +13,7 @@ const Rating = ({ isEditable = false, rating, setRating, ...props }: RatingProps
 	const constructorRating = (currentRating: number) => {
 		const updatedArray = raitingArray.map((r: JSX.Element, i: number) => {
 			return (
-				<span
+				<span key={i}
 					className={cn({ [styles.editable]: isEditable })}
 					onMouseEnter={() => changeDisplay(i + 1)}
 					onMouseLeave={() => changeDisplay(rating)}
