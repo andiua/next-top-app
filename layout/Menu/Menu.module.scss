@@ -1,0 +1,53 @@
+@import '../../styles/variable'; 
+
+.firstLevel{
+	display: grid;
+	grid-template-columns: 24px 1fr;
+	gap: 20px;	
+	align-items: center;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.2;
+	transition: $transition;
+	margin: 20px 0;
+	svg{
+		transition: $transition;
+	}
+}
+.firstLevelActive, .firstLevel:hover{
+	color: $primary;
+	svg {
+		fill: $primary;
+	}
+}
+.secondLavel {
+	margin-bottom: 10px;
+	cursor: pointer;
+	text-transform: uppercase;
+	color: $grey-dark;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 1.2;
+}
+.secondBlock{
+	margin-top: 15px;
+	margin-left: 12px;
+	padding-left: 32px;
+	border-left: 1px solid #dfdfdf;
+}
+.thirdLevel{
+	display: block; 
+	margin-bottom: 10px;
+	cursor: pointer;
+	color: $grey-dark;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.2;
+	transition: $transition;
+	&:hover, &Active{
+		color: $primary;
+	}
+}
+.secondLevelBlockOpened:last-child{
+	margin-bottom: 20px;
+}
