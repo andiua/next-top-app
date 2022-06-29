@@ -12,9 +12,6 @@ import { MenuItem } from '../interfaces/menu.interface';
 const Homesss = ({ menu }: HomesssProps): JSX.Element => {
 	const [counter, setCounter] = useState<number>(0);
 	const [rating, setRating] = useState<number>(2);
-	menu.flatMap(m => m.pages.map(p => {
-		console.log(p.alias);
-	}));
 	return (
 		<>
 			<Htag tag="h1">{counter}</Htag>
