@@ -1,0 +1,65 @@
+@import '../../styles/variable';
+
+.hh {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 30px;
+	line-height: 1.2;
+}
+.count {
+	padding: 20px;
+	text-align: center;
+}
+.salary {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 20px;
+	gap: 20px 0;
+	text-align: center;
+	& > div:not(:last-child) {
+		border-right: 1px solid $grey-light;
+	}
+}
+.title {
+	font-weight: 300;
+	font-size: 20px;
+	margin-bottom: 10px;
+	display: block;
+}
+.countStat {
+	font-weight: 700;
+	font-size: 36px;
+	color: $primary;
+	display: block;
+}
+.salaryValue {
+	font-weight: 700;
+	font-size: 26px;
+	display: block;
+}
+.rate {
+	display: grid;
+	grid-template-columns: 20px 20px 20px;
+	gap: 10px;
+	justify-content: center;
+	margin-top: 10px;
+}
+.filled circle {
+	fill: $red;
+}
+
+@media screen and (max-width: 1200px) {
+	.hh {
+		grid-template-columns: 1fr;
+	}
+}
+@media screen and (max-width: 640px) {
+	.salary {
+		grid-template-columns: 1fr;
+		& > div:not(:last-child) {
+			border-right: none;
+			border-bottom: 1px solid $grey-light;
+			padding-bottom: 20px;
+		}
+	}
+}

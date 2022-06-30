@@ -8,6 +8,8 @@ import Tag from '../components/Tag/Tag';
 import { withLayout } from '../layout/Layout';
 import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
+import Input from '../components/Input/Input';
+import Textarea from './../components/Textarea/Textarea';
 
 const Homesss = ({ menu }: HomesssProps): JSX.Element => {
 	const [counter, setCounter] = useState<number>(0);
@@ -29,7 +31,8 @@ const Homesss = ({ menu }: HomesssProps): JSX.Element => {
 				This is div primary
 			</Tag>
 			<Rating rating={rating} isEditable setRating={setRating} />
-		
+			<Input placeholder="test" />
+			<Textarea placeholder='one more test'/>
 		</>
 	);
 };

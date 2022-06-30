@@ -5,7 +5,7 @@ export enum TopLevelCategory {
 	Products
 }
 
-export interface TopPageAdvantage {
+export interface TopPageAdvantege {
 	_id: string;
 	title: string;
 	description: string;
@@ -21,19 +21,19 @@ export interface HhData {
 }
 
 export interface TopPageModel {
-	tagds: string[];
+	tags: string[];
 	_id: string;
 	secondCategory: string;
 	alias: string;
 	title: string;
 	category: string;
-	seoText: string;
+	seoText?: string;
 	tagsTitle: string;
 	metaTitle: string;
 	metaDescription: string;
 	firstCategoty: number;
-	advantagas: TopPageAdvantage[];
+	advantages?: TopPageAdvantege[];
 	createdAt: Date;
 	updatedAt: Date;
-	hh: HhData;
+	hh?: HhData;
 }
