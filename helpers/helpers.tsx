@@ -33,4 +33,12 @@ export const firstLevelMenu: FirstLevelMenuItem[] = [
 ];
 
 export const priceUa = (price: number): string =>
-	price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+	price
+		.toString()
+		.replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+		.concat(' ₴');
+
+export const declOfNum = (number: number, titles: [string, string, string]): string => {
+	const cases = [2, 0, 1, 1, 1];
+	return titles[number % 100 > 4 ? 2 : cases[number % 100]];
+};

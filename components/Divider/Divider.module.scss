@@ -1,0 +1,9 @@
+@import '../../styles/variable';
+
+.hr{
+	width: 100%;
+	height: 1px;
+	border: none;
+	background-color: $grey-light;
+	margin: 20px 0;
+}
