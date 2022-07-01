@@ -39,7 +39,7 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
 				))}
 			</div>
 			<div className={styles.priceTitle}>цена</div>
-			<div className={styles.creditTitle}>в кредит</div>
+			<div className={styles.creditTitle}>кредит</div>
 			<div className={styles.rateTitle}>
 				{product.reviewCount} {declOfNum(product.reviewCount, ['відгук', 'відгуки', 'відгуків'])}
 			</div>
@@ -68,7 +68,7 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
 					)}
 				</div>
 			)}
-			<Divider className={styles.hr} />
+			<Divider className={cn(styles.hr, styles.hr2)} />
 			<div className={styles.actions}>
 				<Button appearance="primary">Узнать подробнее</Button>
 				<Button appearance="ghost" arrow="right">

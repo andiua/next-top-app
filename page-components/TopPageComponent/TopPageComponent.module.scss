@@ -34,3 +34,8 @@
 	line-height: 27px;
 	margin: 0;
 }
+@media screen and (max-width: 640px), (min-width: 766px ) and (max-width: 991px){
+	.title {
+			grid-template-columns: auto 1fr;
+	}
+}
