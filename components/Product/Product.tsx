@@ -9,16 +9,25 @@ import { priceUa } from '../../helpers/helpers';
 import Divider from '../Divider/Divider';
 import { declOfNum } from './../../helpers/helpers';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Review from './../Review/Review';
 import ReviewForm from './../ReviewForm/ReviewForm';
 
 const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
-	const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
+	const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false); //відкр/закр панель відгуків
+	const reviewRef = useRef<HTMLDivElement>(null);
+
+	const scrollToReview = () => {
+		setIsReviewOpened(true);
+		reviewRef.current?.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start',
+		});
+	};
 
 	return (
-		<>
-			<Card className={cn(styles.product, className)}>
+		<div className={className} {...props}>
+			<Card className={styles.product}>
 				<div className={styles.logo}>
 					<Image
 						src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
@@ -52,7 +61,11 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
 				<div className={styles.priceTitle}>цена</div>
 				<div className={styles.creditTitle}>кредит</div>
 				<div className={styles.rateTitle}>
-					{product.reviewCount} {declOfNum(product.reviewCount, ['відгук', 'відгуки', 'відгуків'])}
+					{/* declOfNum додає відмінювання слова відгук*/}
+					<a href="#ref" onClick={scrollToReview}>
+						{product.reviewCount}{' '}
+						{declOfNum(product.reviewCount, ['відгук', 'відгуки', 'відгуків'])}
+					</a>
 				</div>
 				<Divider className={styles.hr} />
 				<div className={styles.description}>{product.description}</div>
@@ -100,6 +113,7 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
 					[styles.opened]: isReviewOpened,
 					[styles.closed]: !isReviewOpened,
 				})}
+				ref={reviewRef}
 			>
 				{product.reviews.map((r) => (
 					<div key={r._id}>
@@ -109,7 +123,7 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
 				))}
 				<ReviewForm productId={product._id} />
 			</Card>
-		</>
+		</div>
 	);
 };
 
